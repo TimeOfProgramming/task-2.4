@@ -1,0 +1,280 @@
+docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+45a0cdc5c8d3: Pull complete
+Digest: sha256:3b3128d9df6bbbcc92e2358e596c9fbd722a437a62bafbc51607970e9e3b8869
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+
+docker run --name pinger -it busybox ping netology.ru
+PING netology.ru (188.114.99.224): 56 data bytes
+64 bytes from 188.114.99.224: seq=0 ttl=37 time=62.683 ms
+64 bytes from 188.114.99.224: seq=1 ttl=37 time=52.314 ms
+64 bytes from 188.114.99.224: seq=2 ttl=37 time=55.475 ms
+64 bytes from 188.114.99.224: seq=3 ttl=37 time=52.921 ms
+64 bytes from 188.114.99.224: seq=4 ttl=37 time=54.298 ms
+64 bytes from 188.114.99.224: seq=5 ttl=37 time=55.001 ms
+64 bytes from 188.114.99.224: seq=6 ttl=37 time=66.051 ms
+
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED              STATUS                          PORTS     NAMES
+3c87400fccaf   busybox   "ping netology.ru"   About a minute ago   Exited (0) About a minute ago             pinger
+
+docker logs pinger
+PING netology.ru (188.114.99.224): 56 data bytes
+64 bytes from 188.114.99.224: seq=0 ttl=37 time=62.683 ms
+64 bytes from 188.114.99.224: seq=1 ttl=37 time=52.314 ms
+64 bytes from 188.114.99.224: seq=2 ttl=37 time=55.475 ms
+64 bytes from 188.114.99.224: seq=3 ttl=37 time=52.921 ms
+64 bytes from 188.114.99.224: seq=4 ttl=37 time=54.298 ms
+64 bytes from 188.114.99.224: seq=5 ttl=37 time=55.001 ms
+64 bytes from 188.114.99.224: seq=6 ttl=37 time=66.051 ms
+64 bytes from 188.114.99.224: seq=7 ttl=37 time=57.662 ms
+64 bytes from 188.114.99.224: seq=8 ttl=37 time=56.098 ms
+^C
+--- netology.ru ping statistics ---
+9 packets transmitted, 9 packets received, 0% packet loss
+round-trip min/avg/max = 52.314/56.944/66.051 ms
+PING netology.ru (188.114.99.224): 56 data bytes
+64 bytes from 188.114.99.224: seq=0 ttl=37 time=49.864 ms
+64 bytes from 188.114.99.224: seq=1 ttl=37 time=57.774 ms
+64 bytes from 188.114.99.224: seq=2 ttl=37 time=59.260 ms
+64 bytes from 188.114.99.224: seq=3 ttl=37 time=50.017 ms
+64 bytes from 188.114.99.224: seq=4 ttl=37 time=53.481 ms
+64 bytes from 188.114.99.224: seq=5 ttl=37 time=54.023 ms
+64 bytes from 188.114.99.224: seq=6 ttl=37 time=53.499 ms
+64 bytes from 188.114.99.224: seq=7 ttl=37 time=56.856 ms
+64 bytes from 188.114.99.224: seq=8 ttl=37 time=57.888 ms
+64 bytes from 188.114.99.224: seq=9 ttl=37 time=52.691 ms
+64 bytes from 188.114.99.224: seq=10 ttl=37 time=54.086 ms
+64 bytes from 188.114.99.224: seq=11 ttl=37 time=55.141 ms
+64 bytes from 188.114.99.224: seq=12 ttl=37 time=57.245 ms
+64 bytes from 188.114.99.224: seq=13 ttl=37 time=53.165 ms
+64 bytes from 188.114.99.224: seq=14 ttl=37 time=50.885 ms
+64 bytes from 188.114.99.224: seq=15 ttl=37 time=58.704 ms
+64 bytes from 188.114.99.224: seq=16 ttl=37 time=56.054 ms
+64 bytes from 188.114.99.224: seq=17 ttl=37 time=58.230 ms
+64 bytes from 188.114.99.224: seq=18 ttl=37 time=57.030 ms
+64 bytes from 188.114.99.224: seq=19 ttl=37 time=84.697 ms
+64 bytes from 188.114.99.224: seq=20 ttl=37 time=57.728 ms
+64 bytes from 188.114.99.224: seq=21 ttl=37 time=53.148 ms
+64 bytes from 188.114.99.224: seq=22 ttl=37 time=53.074 ms
+
+docker start pinger
+pinger
+
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS          PORTS     NAMES
+3c87400fccaf   busybox   "ping netology.ru"   8 minutes ago   Up 36 seconds             pinger
+
+docker logs pinger
+PING netology.ru (188.114.99.224): 56 data bytes
+64 bytes from 188.114.99.224: seq=0 ttl=37 time=62.683 ms
+64 bytes from 188.114.99.224: seq=1 ttl=37 time=52.314 ms
+64 bytes from 188.114.99.224: seq=2 ttl=37 time=55.475 ms
+64 bytes from 188.114.99.224: seq=3 ttl=37 time=52.921 ms
+64 bytes from 188.114.99.224: seq=4 ttl=37 time=54.298 ms
+64 bytes from 188.114.99.224: seq=5 ttl=37 time=55.001 ms
+64 bytes from 188.114.99.224: seq=6 ttl=37 time=66.051 ms
+64 bytes from 188.114.99.224: seq=7 ttl=37 time=57.662 ms
+64 bytes from 188.114.99.224: seq=8 ttl=37 time=56.098 ms
+^C
+--- netology.ru ping statistics ---
+9 packets transmitted, 9 packets received, 0% packet loss
+round-trip min/avg/max = 52.314/56.944/66.051 ms
+PING netology.ru (188.114.99.224): 56 data bytes
+64 bytes from 188.114.99.224: seq=0 ttl=37 time=49.864 ms
+64 bytes from 188.114.99.224: seq=1 ttl=37 time=57.774 ms
+64 bytes from 188.114.99.224: seq=2 ttl=37 time=59.260 ms
+64 bytes from 188.114.99.224: seq=3 ttl=37 time=50.017 ms
+64 bytes from 188.114.99.224: seq=4 ttl=37 time=53.481 ms
+64 bytes from 188.114.99.224: seq=5 ttl=37 time=54.023 ms
+64 bytes from 188.114.99.224: seq=6 ttl=37 time=53.499 ms
+64 bytes from 188.114.99.224: seq=7 ttl=37 time=56.856 ms
+64 bytes from 188.114.99.224: seq=8 ttl=37 time=57.888 ms
+64 bytes from 188.114.99.224: seq=9 ttl=37 time=52.691 ms
+64 bytes from 188.114.99.224: seq=10 ttl=37 time=54.086 ms
+64 bytes from 188.114.99.224: seq=11 ttl=37 time=55.141 ms
+64 bytes from 188.114.99.224: seq=12 ttl=37 time=57.245 ms
+64 bytes from 188.114.99.224: seq=13 ttl=37 time=53.165 ms
+64 bytes from 188.114.99.224: seq=14 ttl=37 time=50.885 ms
+64 bytes from 188.114.99.224: seq=15 ttl=37 time=58.704 ms
+64 bytes from 188.114.99.224: seq=16 ttl=37 time=56.054 ms
+64 bytes from 188.114.99.224: seq=17 ttl=37 time=58.230 ms
+64 bytes from 188.114.99.224: seq=18 ttl=37 time=57.030 ms
+64 bytes from 188.114.99.224: seq=19 ttl=37 time=84.697 ms
+64 bytes from 188.114.99.224: seq=20 ttl=37 time=57.728 ms
+64 bytes from 188.114.99.224: seq=21 ttl=37 time=53.148 ms
+64 bytes from 188.114.99.224: seq=22 ttl=37 time=53.074 ms
+64 bytes from 188.114.99.224: seq=23 ttl=37 time=55.717 ms
+64 bytes from 188.114.99.224: seq=24 ttl=37 time=58.938 ms
+64 bytes from 188.114.99.224: seq=25 ttl=37 time=55.874 ms
+64 bytes from 188.114.99.224: seq=26 ttl=37 time=53.404 ms
+64 bytes from 188.114.99.224: seq=27 ttl=37 time=55.093 ms
+64 bytes from 188.114.99.224: seq=28 ttl=37 time=71.051 ms
+64 bytes from 188.114.99.224: seq=29 ttl=37 time=53.836 ms
+64 bytes from 188.114.99.224: seq=30 ttl=37 time=53.868 ms
+64 bytes from 188.114.99.224: seq=32 ttl=37 time=57.278 ms
+64 bytes from 188.114.99.224: seq=33 ttl=37 time=56.907 ms
+64 bytes from 188.114.99.224: seq=34 ttl=37 time=56.009 ms
+64 bytes from 188.114.99.224: seq=35 ttl=37 time=56.470 ms
+64 bytes from 188.114.99.224: seq=36 ttl=37 time=66.221 ms
+64 bytes from 188.114.99.224: seq=37 ttl=37 time=105.036 ms
+64 bytes from 188.114.99.224: seq=38 ttl=37 time=58.339 ms
+64 bytes from 188.114.99.224: seq=39 ttl=37 time=55.195 ms
+64 bytes from 188.114.99.224: seq=40 ttl=37 time=54.009 ms
+64 bytes from 188.114.99.224: seq=41 ttl=37 time=54.278 ms
+64 bytes from 188.114.99.224: seq=42 ttl=37 time=51.232 ms
+64 bytes from 188.114.99.224: seq=43 ttl=37 time=52.371 ms
+64 bytes from 188.114.99.224: seq=44 ttl=37 time=52.407 ms
+64 bytes from 188.114.99.224: seq=45 ttl=37 time=54.107 ms
+64 bytes from 188.114.99.224: seq=46 ttl=37 time=65.869 ms
+64 bytes from 188.114.99.224: seq=47 ttl=37 time=51.562 ms
+64 bytes from 188.114.99.224: seq=48 ttl=37 time=56.178 ms
+64 bytes from 188.114.99.224: seq=49 ttl=37 time=61.610 ms
+64 bytes from 188.114.99.224: seq=50 ttl=37 time=55.207 ms
+64 bytes from 188.114.99.224: seq=51 ttl=37 time=57.703 ms
+64 bytes from 188.114.99.224: seq=52 ttl=37 time=53.035 ms
+64 bytes from 188.114.99.224: seq=53 ttl=37 time=53.341 ms
+64 bytes from 188.114.99.224: seq=54 ttl=37 time=56.542 ms
+64 bytes from 188.114.99.224: seq=55 ttl=37 time=56.326 ms
+64 bytes from 188.114.99.224: seq=56 ttl=37 time=55.373 ms
+64 bytes from 188.114.99.224: seq=57 ttl=37 time=57.769 ms
+64 bytes from 188.114.99.224: seq=58 ttl=37 time=57.891 ms
+64 bytes from 188.114.99.224: seq=59 ttl=37 time=57.569 ms
+64 bytes from 188.114.99.224: seq=60 ttl=37 time=57.589 ms
+64 bytes from 188.114.99.224: seq=61 ttl=37 time=56.190 ms
+64 bytes from 188.114.99.224: seq=62 ttl=37 time=55.834 ms
+64 bytes from 188.114.99.224: seq=63 ttl=37 time=54.352 ms
+64 bytes from 188.114.99.224: seq=64 ttl=37 time=57.122 ms
+64 bytes from 188.114.99.224: seq=65 ttl=37 time=55.443 ms
+64 bytes from 188.114.99.224: seq=66 ttl=37 time=54.634 ms
+64 bytes from 188.114.99.224: seq=67 ttl=37 time=54.777 ms
+64 bytes from 188.114.99.224: seq=68 ttl=37 time=53.018 ms
+64 bytes from 188.114.99.224: seq=69 ttl=37 time=55.947 ms
+64 bytes from 188.114.99.224: seq=70 ttl=37 time=57.284 ms
+64 bytes from 188.114.99.224: seq=71 ttl=37 time=51.969 ms
+64 bytes from 188.114.99.224: seq=72 ttl=37 time=52.535 ms
+64 bytes from 188.114.99.224: seq=73 ttl=37 time=56.593 ms
+64 bytes from 188.114.99.224: seq=74 ttl=37 time=53.223 ms
+64 bytes from 188.114.99.224: seq=75 ttl=37 time=58.921 ms
+64 bytes from 188.114.99.224: seq=76 ttl=37 time=57.330 ms
+64 bytes from 188.114.99.224: seq=77 ttl=37 time=53.619 ms
+64 bytes from 188.114.99.224: seq=78 ttl=37 time=54.271 ms
+64 bytes from 188.114.99.224: seq=79 ttl=37 time=62.011 ms
+64 bytes from 188.114.99.224: seq=80 ttl=37 time=56.348 ms
+64 bytes from 188.114.99.224: seq=81 ttl=37 time=64.857 ms
+64 bytes from 188.114.99.224: seq=82 ttl=37 time=54.746 ms
+64 bytes from 188.114.99.224: seq=83 ttl=37 time=64.210 ms
+64 bytes from 188.114.99.224: seq=84 ttl=37 time=56.426 ms
+64 bytes from 188.114.99.224: seq=85 ttl=37 time=53.368 ms
+64 bytes from 188.114.99.224: seq=86 ttl=37 time=55.948 ms
+64 bytes from 188.114.99.224: seq=87 ttl=37 time=53.389 ms
+64 bytes from 188.114.99.224: seq=88 ttl=37 time=51.801 ms
+64 bytes from 188.114.99.224: seq=89 ttl=37 time=56.778 ms
+64 bytes from 188.114.99.224: seq=90 ttl=37 time=57.605 ms
+64 bytes from 188.114.99.224: seq=91 ttl=37 time=60.721 ms
+64 bytes from 188.114.99.224: seq=92 ttl=37 time=56.083 ms
+64 bytes from 188.114.99.224: seq=93 ttl=37 time=56.891 ms
+64 bytes from 188.114.99.224: seq=94 ttl=37 time=55.980 ms
+64 bytes from 188.114.99.224: seq=95 ttl=37 time=55.412 ms
+64 bytes from 188.114.99.224: seq=96 ttl=37 time=54.630 ms
+64 bytes from 188.114.99.224: seq=97 ttl=37 time=56.052 ms
+64 bytes from 188.114.99.224: seq=98 ttl=37 time=59.455 ms
+64 bytes from 188.114.99.224: seq=99 ttl=37 time=54.693 ms
+64 bytes from 188.114.99.224: seq=100 ttl=37 time=55.184 ms
+64 bytes from 188.114.99.224: seq=101 ttl=37 time=53.911 ms
+64 bytes from 188.114.99.224: seq=102 ttl=37 time=59.620 ms
+64 bytes from 188.114.99.224: seq=103 ttl=37 time=54.953 ms
+64 bytes from 188.114.99.224: seq=104 ttl=37 time=51.187 ms
+64 bytes from 188.114.99.224: seq=105 ttl=37 time=54.877 ms
+64 bytes from 188.114.99.224: seq=106 ttl=37 time=69.317 ms
+64 bytes from 188.114.99.224: seq=107 ttl=37 time=53.975 ms
+64 bytes from 188.114.99.224: seq=108 ttl=37 time=53.949 ms
+64 bytes from 188.114.99.224: seq=109 ttl=37 time=72.826 ms
+64 bytes from 188.114.99.224: seq=110 ttl=37 time=77.933 ms
+64 bytes from 188.114.99.224: seq=111 ttl=37 time=61.569 ms
+64 bytes from 188.114.99.224: seq=112 ttl=37 time=60.848 ms
+64 bytes from 188.114.99.224: seq=113 ttl=37 time=54.737 ms
+64 bytes from 188.114.99.224: seq=114 ttl=37 time=54.626 ms
+64 bytes from 188.114.99.224: seq=115 ttl=37 time=52.617 ms
+64 bytes from 188.114.99.224: seq=116 ttl=37 time=54.598 ms
+64 bytes from 188.114.99.224: seq=117 ttl=37 time=49.287 ms
+64 bytes from 188.114.99.224: seq=118 ttl=37 time=51.726 ms
+64 bytes from 188.114.99.224: seq=119 ttl=37 time=50.384 ms
+64 bytes from 188.114.99.224: seq=120 ttl=37 time=51.116 ms
+64 bytes from 188.114.99.224: seq=121 ttl=37 time=55.636 ms
+PING netology.ru (188.114.99.224): 56 data bytes
+64 bytes from 188.114.99.224: seq=0 ttl=37 time=51.313 ms
+64 bytes from 188.114.99.224: seq=1 ttl=37 time=56.984 ms
+64 bytes from 188.114.99.224: seq=2 ttl=37 time=56.603 ms
+64 bytes from 188.114.99.224: seq=3 ttl=37 time=50.398 ms
+64 bytes from 188.114.99.224: seq=4 ttl=37 time=54.583 ms
+64 bytes from 188.114.99.224: seq=5 ttl=37 time=55.841 ms
+64 bytes from 188.114.99.224: seq=6 ttl=37 time=55.063 ms
+64 bytes from 188.114.99.224: seq=7 ttl=37 time=54.662 ms
+64 bytes from 188.114.99.224: seq=8 ttl=37 time=52.731 ms
+64 bytes from 188.114.99.224: seq=9 ttl=37 time=52.798 ms
+64 bytes from 188.114.99.224: seq=10 ttl=37 time=56.220 ms
+64 bytes from 188.114.99.224: seq=11 ttl=37 time=72.245 ms
+64 bytes from 188.114.99.224: seq=12 ttl=37 time=53.272 ms
+64 bytes from 188.114.99.224: seq=13 ttl=37 time=50.760 ms
+64 bytes from 188.114.99.224: seq=14 ttl=37 time=56.668 ms
+64 bytes from 188.114.99.224: seq=15 ttl=37 time=54.521 ms
+64 bytes from 188.114.99.224: seq=16 ttl=37 time=52.568 ms
+64 bytes from 188.114.99.224: seq=17 ttl=37 time=53.517 ms
+64 bytes from 188.114.99.224: seq=18 ttl=37 time=51.919 ms
+64 bytes from 188.114.99.224: seq=19 ttl=37 time=59.006 ms
+64 bytes from 188.114.99.224: seq=20 ttl=37 time=53.972 ms
+64 bytes from 188.114.99.224: seq=21 ttl=37 time=56.230 ms
+64 bytes from 188.114.99.224: seq=22 ttl=37 time=56.353 ms
+64 bytes from 188.114.99.224: seq=23 ttl=37 time=54.396 ms
+64 bytes from 188.114.99.224: seq=24 ttl=37 time=53.279 ms
+64 bytes from 188.114.99.224: seq=25 ttl=37 time=53.308 ms
+64 bytes from 188.114.99.224: seq=26 ttl=37 time=73.890 ms
+64 bytes from 188.114.99.224: seq=27 ttl=37 time=56.462 ms
+64 bytes from 188.114.99.224: seq=28 ttl=37 time=52.406 ms
+64 bytes from 188.114.99.224: seq=29 ttl=37 time=58.303 ms
+64 bytes from 188.114.99.224: seq=30 ttl=37 time=58.916 ms
+64 bytes from 188.114.99.224: seq=31 ttl=37 time=59.061 ms
+64 bytes from 188.114.99.224: seq=32 ttl=37 time=58.199 ms
+64 bytes from 188.114.99.224: seq=33 ttl=37 time=50.241 ms
+64 bytes from 188.114.99.224: seq=34 ttl=37 time=55.909 ms
+64 bytes from 188.114.99.224: seq=35 ttl=37 time=61.473 ms
+64 bytes from 188.114.99.224: seq=36 ttl=37 time=54.035 ms
+64 bytes from 188.114.99.224: seq=37 ttl=37 time=54.908 ms
+64 bytes from 188.114.99.224: seq=38 ttl=37 time=59.183 ms
+64 bytes from 188.114.99.224: seq=39 ttl=37 time=55.544 ms
+64 bytes from 188.114.99.224: seq=40 ttl=37 time=55.149 ms
+64 bytes from 188.114.99.224: seq=41 ttl=37 time=55.363 ms
+64 bytes from 188.114.99.224: seq=42 ttl=37 time=52.955 ms
+64 bytes from 188.114.99.224: seq=43 ttl=37 time=51.821 ms
+64 bytes from 188.114.99.224: seq=44 ttl=37 time=57.085 ms
+64 bytes from 188.114.99.224: seq=45 ttl=37 time=54.776 ms
+64 bytes from 188.114.99.224: seq=46 ttl=37 time=52.851 ms
+64 bytes from 188.114.99.224: seq=47 ttl=37 time=58.412 ms
+64 bytes from 188.114.99.224: seq=48 ttl=37 time=53.636 ms
+64 bytes from 188.114.99.224: seq=49 ttl=37 time=57.533 ms
+64 bytes from 188.114.99.224: seq=50 ttl=37 time=53.489 ms
+64 bytes from 188.114.99.224: seq=51 ttl=37 time=56.594 ms
+64 bytes from 188.114.99.224: seq=52 ttl=37 time=55.088 ms
+64 bytes from 188.114.99.224: seq=53 ttl=37 time=52.643 ms
+64 bytes from 188.114.99.224: seq=54 ttl=37 time=70.509 ms
+64 bytes from 188.114.99.224: seq=55 ttl=37 time=57.111 ms
+64 bytes from 188.114.99.224: seq=56 ttl=37 time=54.695 ms
+64 bytes from 188.114.99.224: seq=57 ttl=37 time=62.287 ms
+64 bytes from 188.114.99.224: seq=58 ttl=37 time=53.866 ms
+64 bytes from 188.114.99.224: seq=59 ttl=37 time=56.289 ms
+64 bytes from 188.114.99.224: seq=60 ttl=37 time=53.588 ms
+
+Число запусков команды ping = 3
+Количество отправленных запросов = 192
+
+docker rm pinger
+pinger
+
+docker rmi busybox
+Untagged: busybox:latest
+Untagged: busybox@sha256:3b3128d9df6bbbcc92e2358e596c9fbd722a437a62bafbc51607970e9e3b8869
+Deleted: sha256:334e4a014c81bd4050daa78c7dfd2ae87855e9052721c164ea9d9d9a416ebdd3
+Deleted: sha256:98004ed6104b2f4cc21559ea6e4a742ebf6731e37b5d1b04013ca68862749ba3
